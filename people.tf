@@ -14,6 +14,12 @@ resource "github_membership" "bob" {
   role     = "member"
 }
 
+resource "github_team_membership" "feanil_frontend" {
+  username = "feanil"
+  team_id  = github_team.west_frontend.id
+  role     = "member"
+}
+
 resource "github_team_membership" "alice_organization_manager" {
   team_id  = github_team.hq_organizationmanagers.id
   username = github_membership.alice.username
